@@ -12,6 +12,7 @@ const boton6 = document.getElementById("b6");
 const boton7 = document.getElementById("b7");
 const boton8 = document.getElementById("b8");
 const boton9 = document.getElementById("b9");
+const botonReiniciar = document.getElementById("input_reiniciar");
 let iniciarJuego = false;
 let contadorCasillasMarcadas = 0;
 
@@ -358,4 +359,6 @@ const corroborarGanador = (v)=>{
         iniciarJuego = false;
     }
 }
-
+botonReiniciar.addEventListener("click",()=>{
+    location.reload()
+})
