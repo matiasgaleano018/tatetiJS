@@ -55,6 +55,9 @@
 .input-submit:hover{
     background: #FF2BAE;
 }
+.input-submit:focus{
+    outline: none;
+}
 .tablero-container{
     display: grid;
     grid-template-columns: repeat(3, 150px);
