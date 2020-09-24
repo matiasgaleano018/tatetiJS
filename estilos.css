@@ -24,8 +24,8 @@
 }
 .form-title{
     font-size: 15px;
-    text-align: center;
-    margin: 8px 0;
+    margin: 12px 0;
+    color: #ccc;
 }
 .form-imputs-container input{
     display: block;
@@ -65,9 +65,30 @@
     grid-gap: 5px;
     margin: 20px 0;
 }
-.tablero-container input{
+.tablero-input{
     border: none;
+    font-size: 85px;
 }
-.tablero-container input:hover{
+.tablero-input:hover{
     background: #D6D6D6;
+}
+.tablero-input:focus{
+    outline: none;
+}
+.input-reiniciar{
+    background: #fc466b;
+    width: 100%;
+    height: 40px;
+    border: none;
+    font-size: 17px;
+    margin-bottom: 18px;
+}
+.input-reiniciar:hover{
+    background: #FF2BAE;
+}
+.ganadorJuego{
+    background: #9A4FF5;
+}
+.ganadorJuego:hover{
+    background: #9A4FF5;
 }
