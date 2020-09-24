@@ -1,0 +1,64 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #05E4FA;
+}
+.game-container{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+
+}
+.game-title{
+    text-align: center;
+}
+.game-container-box{
+    display: block;
+}
+.form{
+    display: block;
+}
+.form-title{
+    font-size: 15px;
+    text-align: center;
+    margin: 8px 0;
+}
+.form-imputs-container input{
+    display: block;
+    width: 96%;
+    height: 35px;
+    margin-left: 1%;
+    margin: 10px 0 10px 1%;
+}
+.input-text{
+    border: none;
+    border-bottom: 3px solid #002758;
+    background: transparent;
+}
+.input-text::placeholder{
+    padding-left: 15px;
+    color: #E1E1E1;
+}
+.input-text:focus{
+    outline: none;
+}
+.input-submit{
+    background: #fc466b;
+    border: none;
+    font-size: 16px;
+}
+.tablero-container{
+    display: grid;
+    grid-template-columns: repeat(3, 150px);
+    grid-template-rows: repeat(3, 150px);
+    grid-gap: 5px;
+    margin: 20px 0;
+}
+.tablero-container input{
+    border: none;
+
+}
