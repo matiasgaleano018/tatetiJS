@@ -45,11 +45,15 @@
 }
 .input-text:focus{
     outline: none;
+    border-bottom: 3px solid#0798F0;
 }
 .input-submit{
     background: #fc466b;
     border: none;
     font-size: 16px;
+}
+.input-submit:hover{
+    background: #FF2BAE;
 }
 .tablero-container{
     display: grid;
@@ -60,5 +64,7 @@
 }
 .tablero-container input{
     border: none;
-
+}
+.tablero-container input:hover{
+    background: #D6D6D6;
 }
