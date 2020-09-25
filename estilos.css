@@ -7,20 +7,19 @@
 .game-container{
     display: flex;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     justify-content: center;
     align-items: center;
     background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
-
-}
-.game-title{
-    text-align: center;
 }
 .game-container-box{
     display: block;
 }
 .form{
     display: block;
+}
+.game-title{
+    text-align: center;
 }
 .form-title{
     font-size: 15px;
@@ -96,6 +95,9 @@
     background: #9A4FF5;
 }
 @media only screen and (max-width: 600px){
+    .game-container{
+        height: 100vh;
+    }
     .tablero-container{
         grid-template-columns: repeat(3,100px);
         grid-template-rows: repeat(3, 100px);
