@@ -86,9 +86,19 @@
 .input-reiniciar:hover{
     background: #FF2BAE;
 }
+.input-reiniciar:focus{
+    outline: none;
+}
 .ganadorJuego{
     background: #9A4FF5;
 }
 .ganadorJuego:hover{
     background: #9A4FF5;
 }
+@media only screen and (max-width: 600px){
+    .tablero-container{
+        grid-template-columns: repeat(3,100px);
+        grid-template-rows: repeat(3, 100px);
+    }
+}
+
