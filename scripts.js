@@ -3,6 +3,14 @@ const jugador1 = document.getElementById("nameJ1");
 const jugador2 = document.getElementById("nameJ2");
 const infoTurno = document.getElementById("infoTurno");
 let turno = "j1";
+
+const botonFondo = document.getElementById("fondoBoton");
+const botonCambioMode = document.getElementById("cambiarModo");
+const lgMode = document.getElementById("lgMode");
+const dkMode = document.getElementById("dkMode");
+const gameContainer = document.getElementById("gameContainer");
+let lightMode = true;
+
 const boton1 = document.getElementById("b1");
 const boton2 = document.getElementById("b2");
 const boton3 = document.getElementById("b3");
@@ -14,15 +22,59 @@ const boton8 = document.getElementById("b8");
 const boton9 = document.getElementById("b9");
 const botonReiniciar = document.getElementById("input_reiniciar");
 let iniciarJuego = false;
+let bloquearSubmit = false;
 let contadorCasillasMarcadas = 0;
+
+botonCambioMode.addEventListener("click", ()=>{
+    if(lightMode){
+        botonCambioMode.classList.add("mode-button-dk");
+        botonFondo.classList.add("dark-mode");
+        lgMode.classList.remove("button-Off");
+        dkMode.classList.add("button-Off");
+        boton1.classList.replace("tablero-input", "tablero-input-dk");
+        boton2.classList.replace("tablero-input", "tablero-input-dk");
+        boton3.classList.replace("tablero-input", "tablero-input-dk");
+        boton4.classList.replace("tablero-input", "tablero-input-dk");
+        boton5.classList.replace("tablero-input", "tablero-input-dk");
+        boton6.classList.replace("tablero-input", "tablero-input-dk");
+        boton7.classList.replace("tablero-input", "tablero-input-dk");
+        boton8.classList.replace("tablero-input", "tablero-input-dk");
+        boton9.classList.replace("tablero-input", "tablero-input-dk");
+        gameContainer.classList.add("game-container-dk");
+        lightMode = false;
+    }else{
+        botonCambioMode.classList.remove("mode-button-dk");
+        botonFondo.classList.remove("dark-mode");
+        lgMode.classList.add("button-Off");
+        dkMode.classList.remove("button-Off");
+        boton1.classList.replace("tablero-input-dk", "tablero-input");
+        boton2.classList.replace("tablero-input-dk", "tablero-input");
+        boton3.classList.replace("tablero-input-dk", "tablero-input");
+        boton4.classList.replace("tablero-input-dk", "tablero-input");
+        boton5.classList.replace("tablero-input-dk", "tablero-input");
+        boton6.classList.replace("tablero-input-dk", "tablero-input");
+        boton7.classList.replace("tablero-input-dk", "tablero-input");
+        boton8.classList.replace("tablero-input-dk", "tablero-input");
+        boton9.classList.replace("tablero-input-dk", "tablero-input");
+        gameContainer.classList.remove("game-container-dk");
+        lightMode = true;
+    }
+    
+})
+    
 
 form.addEventListener("submit", (e)=>{
     e.preventDefault();
-    if(jugador1.value.length < 1 || jugador2.value.length < 1){
-        alert("Debe ingresar el nombre de ambos jugadores")
-    }else{
-        iniciarJuego = true;
-        infoTurno.textContent = `Turno de ${jugador1.value}`
+    if(bloquearSubmit == false)
+        if(jugador1.value.length < 1 || jugador2.value.length < 1){
+            alert("Debe ingresar el nombre de ambos jugadores")
+        }else{
+            iniciarJuego = true;
+            bloquearSubmit = true;
+            infoTurno.textContent = `Turno de ${jugador1.value}`
+        }
+    else{
+        alert("Reinicie el juego para otra partida")
     }
 })
 
@@ -360,5 +412,26 @@ const corroborarGanador = (v)=>{
     }
 }
 botonReiniciar.addEventListener("click",()=>{
-    location.reload()
+    boton1.value = "";
+    boton2.value = "";
+    boton3.value = "";
+    boton4.value = "";
+    boton5.value = "";
+    boton6.value = "";
+    boton7.value = "";
+    boton8.value = "";
+    boton9.value = "";
+    iniciarJuego = true;
+    infoTurno.textContent = `Turno de ${jugador1.value}`;
+    turno = "j1";
+    boton1.classList.remove("ganadorJuego");
+    boton2.classList.remove("ganadorJuego");
+    boton3.classList.remove("ganadorJuego");
+    boton4.classList.remove("ganadorJuego");
+    boton5.classList.remove("ganadorJuego");
+    boton6.classList.remove("ganadorJuego");
+    boton7.classList.remove("ganadorJuego");
+    boton8.classList.remove("ganadorJuego");
+    boton9.classList.remove("ganadorJuego");
+    contadorCasillasMarcadas = 0;
 })

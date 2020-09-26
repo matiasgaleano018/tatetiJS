@@ -2,7 +2,6 @@
     padding: 0;
     margin: 0;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: #05E4FA;
 }
 .game-container{
     display: flex;
@@ -11,6 +10,10 @@
     justify-content: center;
     align-items: center;
     background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+    
+}
+.game-container-dk{
+    background: radial-gradient(circle, rgba(161,0,33,1) 0%, rgba(1,16,91,1) 100%);
 }
 .game-container-box{
     display: block;
@@ -19,6 +22,7 @@
     display: block;
 }
 .game-title{
+    color: #05E4FA;
     text-align: center;
 }
 .form-title{
@@ -37,6 +41,7 @@
     border: none;
     border-bottom: 3px solid #002758;
     background: transparent;
+    color: #0798F0;
 }
 .input-text::placeholder{
     padding-left: 15px;
@@ -46,6 +51,40 @@
     outline: none;
     border-bottom: 3px solid#0798F0;
 }
+
+/*Modo claro y oscuro*/
+.light-mode{
+    width: 65px;
+    height: 30px;
+    background: #fc466b;
+    border-radius: 25px;
+    margin: 22px 5px;
+    transition: 1s;
+}
+.mode-button-lg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 100%;
+    background: #620062;
+    transform: translate(0, -2px);
+    color: #fff;
+    transition: 1s;
+}
+.dark-mode{
+    background: #620062;
+}
+.mode-button-dk{
+    background: #fc466b;
+    transform: translate(33px, -2px);
+}
+
+.button-Off{
+    display: none;
+}
+
 .input-submit{
     background: #fc466b;
     border: none;
@@ -67,9 +106,21 @@
 .tablero-input{
     border: none;
     font-size: 85px;
+    background: #fff;
+    color: #0798F0;
+}
+.tablero-input-dk{
+    border: none;
+    font-size: 85px;
+    background: #fff;
+    background: #000;
+    color: #fff;
+}
+.tablero-input-dk:hover{
+    background: #343434;
 }
 .tablero-input:hover{
-    background: #D6D6D6;
+    background: #D6D5D6;
 }
 .tablero-input:focus{
     outline: none;
@@ -89,10 +140,14 @@
     outline: none;
 }
 .ganadorJuego{
-    background: #9A4FF5;
+    background: #4B057C;
 }
 .ganadorJuego:hover{
-    background: #9A4FF5;
+    background: #4B057C;
+}
+.infoTurno{
+    color: #0798F0;
+    font-size: 25px;
 }
 @media only screen and (max-width: 600px){
     .game-container{
@@ -104,3 +159,14 @@
     }
 }
 
+@media only screen and (max-width:300px){
+    .tablero-container{
+        grid-template-columns: repeat(3, 87px);
+        grid-template-rows: repeat(3, 87px);
+        margin-left: 4px;
+    }
+    .input-reiniciar{
+        width: 96%;
+        margin-left: 6px;
+    }
+}
