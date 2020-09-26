@@ -119,6 +119,9 @@
 .tablero-input-dk:hover{
     background: #343434;
 }
+.tablero-input-dk:focus{
+    outline: none;
+}
 .tablero-input:hover{
     background: #D6D5D6;
 }
@@ -156,6 +159,16 @@
     .tablero-container{
         grid-template-columns: repeat(3,100px);
         grid-template-rows: repeat(3, 100px);
+    }
+    .light-mode{
+        margin: 0;
+        margin-bottom: 3px;
+    }
+    .infoTurno{
+        font-size: 15px;
+    }
+    .tablero-container{
+        margin: 5px 0;
     }
 }
 
